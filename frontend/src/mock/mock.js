@@ -16,6 +16,7 @@ export const cafe = {
   instagramReel: "https://www.instagram.com/reel/DSmcIx6DDl-/embed",
   instagramUrl: "https://www.instagram.com/reel/DSmcIx6DDl-/",
   hoursImage: "https://images.pexels.com/photos/17130636/pexels-photo-17130636.jpeg",
+  counterImage: "https://customer-assets.emergentagent.com/job_luxury-cafe-hub-4/artifacts/6grczd27_6295932C-90B0-45E2-891A-7E48DB5651B9_1_201_a.jpeg",
   toastUrl:
     "https://order.toasttab.com/online/babylon-coffee-19-gardens-international-henry-street-limerick-ireland",
   hours: [

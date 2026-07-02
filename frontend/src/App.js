@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import Story from "./components/Story";
+import Counter from "./components/Counter";
 import Signatures from "./components/Signatures";
 import Ambiance from "./components/Ambiance";
 import Reviews from "./components/Reviews";
@@ -35,6 +36,7 @@ const Home = () => (
     <Hero />
     <Marquee />
     <Story />
+    <Counter />
     <Signatures />
     <Ambiance />
     <Reviews />

@@ -60,8 +60,8 @@ export default function Ambiance() {
           >
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
               {/* Video — natural aspect, scaled to 80% and centered */}
-              <div className="md:col-span-7 flex justify-center">
-                <div className="relative w-4/5 rounded-[2px] overflow-hidden">
+              <div className="md:col-span-6 flex justify-center">
+                <div className="relative w-[93%] rounded-[2px] overflow-hidden">
                   <video
                     src={ambianceVideo}
                     autoPlay
@@ -79,9 +79,9 @@ export default function Ambiance() {
               </div>
 
               {/* Rotating full-size photo — offset for an asymmetric feel */}
-              <div className="md:col-span-5 md:mt-20">
+              <div className="md:col-span-6 md:mt-20">
                 <div className="relative aspect-[4/5] rounded-[2px] overflow-hidden bg-espresso">
-                  <AnimatePresence mode="wait">
+                  <AnimatePresence>
                     <motion.img
                       key={idx}
                       src={ambianceImages[idx]}
@@ -89,7 +89,7 @@ export default function Ambiance() {
                       initial={{ opacity: 0, scale: 1.06 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   </AnimatePresence>
