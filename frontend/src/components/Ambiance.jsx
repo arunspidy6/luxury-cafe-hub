@@ -59,8 +59,8 @@ export default function Ambiance() {
             className="lg:col-span-8 order-1 lg:order-2"
           >
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
-              {/* Video — natural aspect, never resized/cropped */}
-              <div className="md:col-span-7 relative rounded-[2px] overflow-hidden bg-espresso flex items-center justify-center">
+              {/* Video — natural aspect, fills its frame with no letterbox */}
+              <div className="md:col-span-7 relative rounded-[2px] overflow-hidden">
                 <video
                   src={ambianceVideo}
                   autoPlay
@@ -68,7 +68,7 @@ export default function Ambiance() {
                   loop
                   playsInline
                   preload="auto"
-                  className="w-full h-auto max-h-[72vh] object-contain block"
+                  className="w-full h-auto block"
                 />
                 <span className="absolute top-4 left-4 flex items-center gap-2 bg-espresso/60 backdrop-blur-sm px-3 py-1.5 rounded-full text-[10px] tracking-[0.16em] uppercase text-cream/90">
                   <span className="w-1.5 h-1.5 rounded-full bg-terracotta-light animate-pulse" />
