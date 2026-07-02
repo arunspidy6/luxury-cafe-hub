@@ -1,12 +1,48 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { galleryImages } from "../mock/mock";
+import { Instagram } from "lucide-react";
+import { galleryImages, cafe } from "../mock/mock";
 import { stagger, viewport } from "./anim";
 
 const tile = {
   hidden: { opacity: 0, y: 26 },
   show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }
 };
+
+function ReelCard() {
+  return (
+    <motion.div
+      variants={tile}
+      className="break-inside-avoid mb-4 lg:mb-5 rounded-[2px] overflow-hidden bg-espresso relative"
+    >
+      <div className="flex items-center justify-between px-4 py-3 border-b border-cream/10">
+        <span className="flex items-center gap-2 text-cream text-[11px] tracking-luxe uppercase">
+          <Instagram size={15} className="text-terracotta-light" />
+          Watch
+        </span>
+        <a
+          href={cafe.instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-cream/60 hover:text-terracotta-light text-[11px] tracking-[0.14em] uppercase transition-colors"
+        >
+          @babylon
+        </a>
+      </div>
+      <div className="relative w-full" style={{ height: 620 }}>
+        <iframe
+          title="Babylon reel"
+          src={cafe.instagramReel}
+          className="w-full h-full"
+          style={{ border: 0 }}
+          scrolling="no"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Gallery() {
   return (
@@ -23,7 +59,7 @@ export default function Gallery() {
           </div>
           <p className="text-espresso/60 max-w-sm text-lg">
             A glimpse of the everyday at Babylon — the light, the craft and the
-            small rituals in between.
+            small rituals in between. Press play for a morning with us.
           </p>
         </div>
 
@@ -34,6 +70,7 @@ export default function Gallery() {
           viewport={viewport}
           className="columns-2 lg:columns-3 gap-4 lg:gap-5 [column-fill:_balance]"
         >
+          <ReelCard />
           {galleryImages.map((img, i) => (
             <motion.figure
               key={i}

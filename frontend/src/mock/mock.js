@@ -13,6 +13,9 @@ export const cafe = {
   reviewsCount: 428,
   mapsUrl: "https://maps.app.goo.gl/A95hPzYhEJezRAna6",
   logo: "https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/64a0bf44-cb75-4322-947a-9e7c2157880c/restaurant_1749464361.jpg",
+  instagramReel: "https://www.instagram.com/reel/DSmcIx6DDl-/embed",
+  instagramUrl: "https://www.instagram.com/reel/DSmcIx6DDl-/",
+  hoursImage: "https://images.pexels.com/photos/17130636/pexels-photo-17130636.jpeg",
   toastUrl:
     "https://order.toasttab.com/online/babylon-coffee-19-gardens-international-henry-street-limerick-ireland",
   hours: [

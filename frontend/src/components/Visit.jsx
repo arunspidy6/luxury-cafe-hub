@@ -59,23 +59,55 @@ export default function Visit() {
             </motion.a>
           </motion.div>
 
-          {/* Hours + map */}
+          {/* Opening hours poster + map */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewport}>
-            <div className="bg-espresso text-cream rounded-[2px] overflow-hidden">
-              <div className="flex items-center gap-3 px-8 py-5 border-b border-cream/10">
-                <Clock size={18} className="text-terracotta-light" />
-                <span className="text-[11px] tracking-[0.18em] uppercase text-cream/70">Opening Hours</span>
+            {/* Poster-style hours card */}
+            <div className="relative rounded-[2px] overflow-hidden">
+              <img
+                src={cafe.hoursImage}
+                alt="Babylon interior"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-espresso/75" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-cream/15 m-3 rounded-[2px] pointer-events-none" />
+
+              <div className="relative p-8 lg:p-10 text-cream">
+                <div className="flex items-center justify-between mb-8">
+                  <span className="flex items-center gap-2 text-[11px] tracking-luxe uppercase text-cream/80">
+                    <Clock size={15} className="text-terracotta-light" />
+                    Opening Hours
+                  </span>
+                  <span className="flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-sage-light">
+                    <span className="w-1.5 h-1.5 rounded-full bg-sage-light animate-pulse" />
+                    Open Daily
+                  </span>
+                </div>
+
+                <p className="font-display text-4xl lg:text-5xl leading-[1.05] mb-8">
+                  Doors open<br />
+                  <span className="italic text-terracotta-light">from 7:30 AM</span>
+                </p>
+
+                <ul className="space-y-0.5">
+                  {cafe.hours.map((h) => (
+                    <li
+                      key={h.day}
+                      className="flex items-baseline gap-3 py-2 border-b border-cream/10 last:border-0"
+                    >
+                      <span className="text-cream/85 text-lg font-display w-28">{h.day}</span>
+                      <span className="flex-1 border-b border-dotted border-cream/20 translate-y-[-3px]" />
+                      <span className="text-cream/70 tabular-nums">{h.time}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="mt-7 text-cream/60 text-sm">
+                  Full menu served all day · Kitchen closes 30 minutes before close.
+                </p>
               </div>
-              <ul className="px-8 py-3">
-                {cafe.hours.map((h) => (
-                  <li key={h.day} className="flex justify-between py-2.5 border-b border-cream/[0.06] last:border-0">
-                    <span className="text-cream/85">{h.day}</span>
-                    <span className="text-cream/55">{h.time}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
 
+            {/* Map */}
             <a
               href={cafe.mapsUrl}
               target="_blank"
@@ -85,7 +117,7 @@ export default function Visit() {
               <iframe
                 title="Babylon location"
                 src="https://www.google.com/maps?q=19+Henry+St,+Limerick,+Ireland&output=embed"
-                className="w-full h-72 grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-60 grayscale group-hover:grayscale-0 transition-all duration-700"
                 loading="lazy"
               />
             </a>
