@@ -40,8 +40,7 @@ export const marqueeWords = [
   "Every Cup a Ritual"
 ];
 
-export const heroImage =
-  "https://images.unsplash.com/photo-1636928837218-f2b56d5a7861";
+export const heroImage = "/hero-babylon.jpg";
 
 export const about = {
   eyebrow: "Who's Behind It",
