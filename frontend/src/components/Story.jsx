@@ -22,7 +22,7 @@ export default function Story() {
               className="w-full h-[70vh] object-cover"
             />
           </div>
-          <div className="absolute -top-5 -right-5 border border-terracotta w-full h-full rounded-[2px] -z-0 hidden lg:block" />
+          <div className="absolute -top-5 -right-5 border border-sage w-full h-full rounded-[2px] -z-0 hidden lg:block" />
         </motion.div>
 
         {/* Text side */}

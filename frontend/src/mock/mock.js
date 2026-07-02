@@ -109,7 +109,7 @@ export const signatures = [
     desc: "20oz double espresso poured over milk & ice",
     price: 5.0,
     image:
-      "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
+      "https://d1w7312wesee68.cloudfront.net/YO8QYtSWA1qM2YEX52K1GOfQL8hrBv0iB3zU1nrwLKo/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-272068000000000000/menu/items/4/item-700000000880109224_1769216266.jpg"
   }
 ];
 
@@ -195,6 +195,7 @@ export const menuCategories = [
 export const galleryImages = [
   { src: "https://images.unsplash.com/photo-1597528662465-55ece5734101?crop=entropy&cs=srgb&fm=jpg&q=85", label: "Pastry" },
   { src: "https://images.pexels.com/photos/33569441/pexels-photo-33569441.jpeg", label: "The Room" },
+  { src: "https://d1w7312wesee68.cloudfront.net/YO8QYtSWA1qM2YEX52K1GOfQL8hrBv0iB3zU1nrwLKo/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-272068000000000000/menu/items/4/item-700000000880109224_1769216266.jpg", label: "House Coffee" },
   { src: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?crop=entropy&cs=srgb&fm=jpg&q=85", label: "Brunch" },
   { src: "https://images.unsplash.com/photo-1534432182912-63863115e106?crop=entropy&cs=srgb&fm=jpg&q=85", label: "Counter" },
   { src: "https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?crop=entropy&cs=srgb&fm=jpg&q=85", label: "Pour" },

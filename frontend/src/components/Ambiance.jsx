@@ -13,7 +13,7 @@ export default function Ambiance() {
   const y2 = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
 
   return (
-    <section id="ambiance" ref={ref} className="bg-espresso py-24 lg:py-36 text-cream overflow-hidden">
+    <section id="ambiance" ref={ref} className="bg-sage-dark py-24 lg:py-36 text-cream overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <motion.div
