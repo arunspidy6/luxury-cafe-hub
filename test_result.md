@@ -128,6 +128,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ PASSED - Ambiance video section (id='ambiance') fully functional. Video attributes verified: loop=true, autoplay=true, initially muted=true. Video is playing (currentTime advanced from 1.34s to 3.15s over 2 seconds). Video readyState=4 (HAVE_ENOUGH_DATA). Mute/unmute toggle button works correctly (aria-label changes from 'Unmute video' to 'Mute video', muted property toggles). All 4 supporting images render correctly below video with proper dimensions (1206px, 1206px, 1206px, 359px). Video source: https://customer-assets.emergentagent.com/job_luxury-cafe-hub-4/artifacts/2l80i28b_We're%20open%20and%20the%20coffee%20is%20pouring%20☕️%20%23Babylon%20%23limerick.mp4"
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED (2026-07-02) - Recent changes verified: 1) NO AUDIO/NO TOGGLE: Video muted property=true, NO mute/unmute toggle button found (previously had toggle, now removed). Video functionally muted and will not produce audio. Note: HTML 'muted' attribute not present in DOM due to known React 19 bug (GitHub issue #22045), but video.muted property is true which is functionally correct. 2) VIDEO STABLE+PLAYING: Video playing correctly (currentTime advanced 1.02s→2.72s over 2s), autoplay=true, loop=true, readyState=4. 3) ROTATING PHOTOS: Single rotating photo frame working (NOT 4 static images). Only 1 photo visible at a time, auto-rotates every ~3.8s (verified image src changed after 5s wait). 4 indicator dots present with aria-labels 'Show photo 1-4', manual dot navigation functional. All requirements met."
 
   - task: "Gallery Section Removal"
     implemented: true
@@ -144,7 +147,7 @@ frontend:
 metadata:
   created_by: "testing_agent"
   version: "1.0"
-  test_sequence: 2
+  test_sequence: 3
   run_ui: true
   last_tested: "2026-07-02"
 
@@ -159,3 +162,5 @@ agent_communication:
     message: "Comprehensive testing completed for Babylon Coffee website. All 8 test scenarios PASSED successfully. Gallery displays all 7 images correctly, cart/order flow works perfectly with localStorage persistence, menu page navigation and category tabs functional, items can be added from both home and menu pages, Banana Bread properly shows as out of stock with disabled button, and checkout correctly opens Toast URL in new tab. Minor non-critical issues: 2 failed CDN requests (Cloudflare RUM tracking) and some networkidle timeout warnings during navigation, but these do not affect functionality. Application is production-ready."
   - agent: "testing"
     message: "NEW TESTING ROUND COMPLETED (2026-07-02): Tested three recent changes to Babylon Coffee site. ALL 3 TESTS PASSED: 1) Hero 'Explore the Menu' link now correctly navigates to /menu route (previously broken in-page anchor fixed), 2) Ambiance video section fully functional with autoplay, loop, mute toggle, and 4 supporting images, 3) Gallery section successfully removed from home page and navbar. No console errors detected. Application changes verified and working correctly."
+  - agent: "testing"
+    message: "AMBIANCE SECTION RE-TEST COMPLETED (2026-07-02): Verified recent changes per user request. ALL REQUIREMENTS MET: 1) NO AUDIO/NO TOGGLE - Video is muted (property=true), NO toggle button exists (previously removed), video will not produce audio. Technical note: HTML 'muted' attribute not in DOM due to React 19 bug (GitHub #22045), but functionally correct. 2) VIDEO STABLE+PLAYING - Video playing/looping correctly, time advances, autoplay/loop attributes present. 3) ROTATING PHOTOS - Single photo frame rotates through 4 images (one at a time), auto-rotation works (~3.8s interval), 4 indicator dots functional. Previous implementation (4 static images + toggle button) successfully replaced with new design (1 rotating photo, no audio controls)."

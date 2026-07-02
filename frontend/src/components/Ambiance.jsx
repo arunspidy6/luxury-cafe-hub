@@ -1,20 +1,19 @@
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { Volume2, VolumeX } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ambianceImages, ambianceVideo } from "../mock/mock";
 import { fadeUp, stagger, viewport } from "./anim";
 
 export default function Ambiance() {
-  const videoRef = useRef(null);
-  const [muted, setMuted] = useState(true);
+  const [idx, setIdx] = useState(0);
 
-  const toggleMute = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = !v.muted;
-    setMuted(v.muted);
-    if (!v.muted) v.play().catch(() => {});
-  };
+  // Rotate the supporting photos one at a time (full size, never all at once)
+  useEffect(() => {
+    const t = setInterval(
+      () => setIdx((i) => (i + 1) % ambianceImages.length),
+      3800
+    );
+    return () => clearInterval(t);
+  }, []);
 
   return (
     <section id="ambiance" className="bg-sage-dark py-24 lg:py-36 text-cream overflow-hidden">
@@ -51,7 +50,7 @@ export default function Ambiance() {
             </motion.p>
           </motion.div>
 
-          {/* Media — video is the hero */}
+          {/* Media — video is the priority (stable), photos rotate one at a time */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -59,42 +58,55 @@ export default function Ambiance() {
             viewport={viewport}
             className="lg:col-span-8 order-1 lg:order-2"
           >
-            <div className="relative rounded-[2px] overflow-hidden bg-espresso flex items-center justify-center">
-              <video
-                ref={videoRef}
-                src={ambianceVideo}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                className="w-full h-auto max-h-[74vh] object-contain block"
-              />
-              <button
-                onClick={toggleMute}
-                className="absolute bottom-4 right-4 w-11 h-11 rounded-full bg-cream/90 hover:bg-cream text-espresso flex items-center justify-center transition-colors shadow-lg"
-                aria-label={muted ? "Unmute video" : "Mute video"}
-              >
-                {muted ? <VolumeX size={19} /> : <Volume2 size={19} />}
-              </button>
-              <span className="absolute top-4 left-4 flex items-center gap-2 bg-espresso/60 backdrop-blur-sm px-3 py-1.5 rounded-full text-[10px] tracking-[0.16em] uppercase text-cream/90">
-                <span className="w-1.5 h-1.5 rounded-full bg-terracotta-light animate-pulse" />
-                Now Pouring
-              </span>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
+              {/* Video — natural aspect, never resized/cropped */}
+              <div className="md:col-span-7 relative rounded-[2px] overflow-hidden bg-espresso flex items-center justify-center">
+                <video
+                  src={ambianceVideo}
+                  autoPlay
+                  muted={true}
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="w-full h-auto max-h-[72vh] object-contain block"
+                />
+                <span className="absolute top-4 left-4 flex items-center gap-2 bg-espresso/60 backdrop-blur-sm px-3 py-1.5 rounded-full text-[10px] tracking-[0.16em] uppercase text-cream/90">
+                  <span className="w-1.5 h-1.5 rounded-full bg-terracotta-light animate-pulse" />
+                  Now Pouring
+                </span>
+              </div>
 
-            {/* Supporting photo strip */}
-            <div className="grid grid-cols-4 gap-3 mt-3">
-              {ambianceImages.map((src, i) => (
-                <div key={i} className="overflow-hidden rounded-[2px] group">
-                  <img
-                    src={src}
-                    alt={`Babylon interior ${i + 1}`}
-                    loading="lazy"
-                    className="w-full h-24 lg:h-28 object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+              {/* Rotating full-size photo — offset for an asymmetric feel */}
+              <div className="md:col-span-5 md:mt-20">
+                <div className="relative aspect-[4/5] rounded-[2px] overflow-hidden bg-espresso">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={idx}
+                      src={ambianceImages[idx]}
+                      alt="Inside Babylon"
+                      initial={{ opacity: 0, scale: 1.06 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </AnimatePresence>
+
+                  {/* progress dots */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    {ambianceImages.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setIdx(i)}
+                        aria-label={`Show photo ${i + 1}`}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          i === idx ? "w-6 bg-cream" : "w-1.5 bg-cream/40 hover:bg-cream/70"
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </motion.div>
         </div>
