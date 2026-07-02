@@ -26,9 +26,14 @@ module.exports = {
           light: '#D08A6E'
         },
         olive: {
-          DEFAULT: '#6B6B3F',
-          dark: '#4E4E2C',
-          light: '#8A8A5A'
+          DEFAULT: '#7C9269',
+          dark: '#5F7551',
+          light: '#9DB189'
+        },
+        sage: {
+          DEFAULT: '#7C9269',
+          dark: '#5F7551',
+          light: '#9DB189'
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

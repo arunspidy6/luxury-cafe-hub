@@ -1,8 +1,9 @@
-// Mock data for Babylon Cafe — replace with backend later
+// Mock data for Babylon Coffee \u2014 replace with backend later
 
 export const cafe = {
   name: "Babylon",
-  tagline: "A café, distilled to its most beautiful hour.",
+  fullName: "Babylon Coffee",
+  tagline: "Specialty coffee, matcha & good mornings on Henry Street.",
   established: "EST. MMXVIII",
   city: "Limerick, Ireland",
   address: "19 Henry St, Prior's-Land, Limerick, V94 N125",
@@ -11,14 +12,17 @@ export const cafe = {
   rating: 4.3,
   reviewsCount: 428,
   mapsUrl: "https://maps.app.goo.gl/A95hPzYhEJezRAna6",
+  logo: "https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/64a0bf44-cb75-4322-947a-9e7c2157880c/restaurant_1749464361.jpg",
+  toastUrl:
+    "https://order.toasttab.com/online/babylon-coffee-19-gardens-international-henry-street-limerick-ireland",
   hours: [
-    { day: "Monday", time: "7:30 — 17:00" },
-    { day: "Tuesday", time: "7:30 — 17:00" },
-    { day: "Wednesday", time: "7:30 — 17:00" },
-    { day: "Thursday", time: "7:30 — 17:00" },
-    { day: "Friday", time: "7:30 — 17:00" },
-    { day: "Saturday", time: "8:00 — 18:00" },
-    { day: "Sunday", time: "8:00 — 16:00" }
+    { day: "Monday", time: "7:30 \u2014 17:00" },
+    { day: "Tuesday", time: "7:30 \u2014 17:00" },
+    { day: "Wednesday", time: "7:30 \u2014 17:00" },
+    { day: "Thursday", time: "7:30 \u2014 17:00" },
+    { day: "Friday", time: "7:30 \u2014 17:00" },
+    { day: "Saturday", time: "8:00 \u2014 18:00" },
+    { day: "Sunday", time: "8:00 \u2014 16:00" }
   ]
 };
 
@@ -29,7 +33,7 @@ export const marqueeWords = [
   "Golden Hour",
   "Hand Poured",
   "Quiet Luxury",
-  "Seasonal Bakes",
+  "Ceremonial Matcha",
   "Every Cup a Ritual"
 ];
 
@@ -40,88 +44,150 @@ export const about = {
   eyebrow: "Who's Behind It",
   title: "An address for the unhurried",
   body: [
-    "Babylon began as a small idea on Henry Street — a room where the light falls slowly and the coffee is treated like a craft. We roast in small batches, pour by hand, and plate everything as though it were the only thing that mattered that morning.",
-    "Terracotta walls, olive linen, worn brass and the low hum of conversation. This is a place to linger, to read, to meet — a quiet luxury you can taste in every cup."
+    "Babylon began as a small idea on Henry Street \u2014 a room where the light falls slowly and every cup is treated like a craft. We pull our espresso, whisk our matcha and build our bowls fresh, one order at a time.",
+    "Sage-green walls, warm terracotta light and the low hum of conversation. This is a place to linger, to read, to meet \u2014 a quiet luxury you can taste in every cup."
   ],
   stats: [
-    { value: "7yrs", label: "Roasting in Limerick" },
-    { value: "12", label: "Single-origin lots" },
-    { value: "4.3★", label: "Loved by regulars" }
+    { value: "7yrs", label: "On Henry Street" },
+    { value: "40+", label: "Drinks & bowls" },
+    { value: "4.3\u2605", label: "Loved by regulars" }
   ],
   image: "https://images.pexels.com/photos/17130636/pexels-photo-17130636.jpeg"
 };
 
+// Home-page signatures (Ceremony-inspired product grid)
 export const signatures = [
   {
-    name: "Babylon Gold",
-    note: "Saffron & honey cortado",
-    desc: "Double ristretto, warm milk, a thread of saffron honey and a dusting of gold.",
-    price: "€5.20",
+    id: "sig-strawberry-matcha",
+    tag: "Ceremonial Matcha",
+    name: "Iced Strawberry Matcha",
+    desc: "Strawberry pur\u00e9e & smooth iced matcha",
+    price: 6.5,
     image:
-      "https://images.unsplash.com/photo-1497636577773-f1231844b336?crop=entropy&cs=srgb&fm=jpg&q=85"
+      "https://images.unsplash.com/photo-1751033390078-b605c8727fa4?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
   },
   {
-    name: "Olive Grove Latte",
-    note: "Cold-pressed olive oil",
-    desc: "Silken espresso, oat milk and a spoon of Tuscan olive oil for a velvet finish.",
-    price: "€5.60",
+    id: "sig-cinnamon-matcha",
+    tag: "House Special",
+    name: "Cinnamon Bun Iced Matcha",
+    desc: "Iced matcha topped with housemade cinnamon bun coldfoam",
+    price: 6.5,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?crop=entropy&cs=srgb&fm=jpg&q=85"
+      "https://images.unsplash.com/photo-1717398804885-a6c22b3e5c2f?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
   },
   {
-    name: "Terracotta Mocha",
-    note: "Spiced dark chocolate",
-    desc: "70% Valrhona, cinnamon, chilli whisper and house-roasted espresso.",
-    price: "€5.40",
+    id: "sig-classic-acai",
+    tag: "Bowls",
+    name: "Classic Acai",
+    desc: "Soft serve acai, granola, peanut butter, strawberries & banana chips",
+    price: 10.0,
     image:
-      "https://images.unsplash.com/photo-1593443320739-77f74939d0da?crop=entropy&cs=srgb&fm=jpg&q=85"
+      "https://images.unsplash.com/photo-1684403620650-81dc661a69db?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
   },
   {
-    name: "Fig & Cardamom Cold Brew",
-    note: "18-hour steeped",
-    desc: "Slow-steeped single origin, macerated fig and a breath of green cardamom.",
-    price: "€5.80",
+    id: "sig-blue-magic",
+    tag: "Smoothies",
+    name: "Blue Magic Smoothie",
+    desc: "Vanilla protein, blue spirulina, coconut, banana & almond milk",
+    price: 7.5,
     image:
-      "https://images.pexels.com/photos/4913342/pexels-photo-4913342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      "https://images.unsplash.com/photo-1575159249868-df58bf5e09ec?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
+  },
+  {
+    id: "sig-dirty-caribbean",
+    tag: "Espresso",
+    name: "Hot Dirty Caribbean",
+    desc: "Double espresso, dark Belgian chocolate chips & frothed coconut milk",
+    price: 5.5,
+    image:
+      "https://images.unsplash.com/photo-1541167760496-1628856ab772?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
+  },
+  {
+    id: "sig-iced-latte",
+    tag: "Espresso",
+    name: "Iced Latte",
+    desc: "20oz double espresso poured over milk & ice",
+    price: 5.0,
+    image:
+      "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
   }
 ];
 
-export const menu = [
+// Full menu for dedicated /menu page
+export const menuCategories = [
   {
-    category: "Espresso Bar",
+    id: "coffee-matcha",
+    name: "Coffee & Matcha",
     items: [
-      { name: "Espresso", desc: "Single origin, rotating", price: "€3.00" },
-      { name: "Cortado", desc: "Equal parts, warm milk", price: "€3.60" },
-      { name: "Flat White", desc: "Double ristretto, micro-foam", price: "€4.00" },
-      { name: "Cappuccino", desc: "Classic, cocoa dusting", price: "€4.20" },
-      { name: "Pour Over", desc: "Hand poured, choice of lot", price: "€4.80" }
+      { id: "americano", name: "Americano", desc: "12oz double espresso & hot water", price: 4.0 },
+      { id: "cappuccino", name: "Cappuccino", desc: "10oz double espresso & frothed milk", price: 4.4 },
+      { id: "latte", name: "Latte", desc: "10oz double espresso & frothed milk", price: 4.4 },
+      { id: "flat-white", name: "Flat White", desc: "8oz double espresso & frothed milk", price: 4.2 },
+      { id: "mocha", name: "Mocha", desc: "10oz double espresso, chocolate & frothed milk", price: 5.2 },
+      { id: "cortado", name: "Cortado", desc: "Double espresso topped with frothed milk", price: 4.0 },
+      { id: "single-espresso", name: "Single Espresso", desc: "", price: 2.6 },
+      { id: "double-espresso", name: "Double Espresso", desc: "", price: 3.8 },
+      { id: "chai-latte", name: "Chai Latte", desc: "10oz spiced chai with frothed milk", price: 4.5 },
+      { id: "dirty-chai", name: "Dirty Chai", desc: "10oz double espresso, spiced chai & frothed milk", price: 5.5 },
+      { id: "iced-latte", name: "Iced Latte", desc: "20oz double espresso poured over milk & ice", price: 5.0 },
+      { id: "iced-mocha", name: "Iced Mocha", desc: "20oz double espresso & chocolate over milk & ice", price: 6.0 },
+      { id: "iced-americano", name: "Iced Americano", desc: "20oz double espresso poured over iced water", price: 5.0 },
+      { id: "iced-chai", name: "Iced Chai Latte", desc: "20oz spiced chai mix poured over milk & ice", price: 5.2 },
+      { id: "iced-dirty-chai", name: "Iced Dirty Chai", desc: "20oz double espresso & spiced chai over milk & ice", price: 6.0 },
+      { id: "hot-dirty-caribbean", name: "Hot Dirty Caribbean", desc: "10oz double espresso, dark Belgian chocolate chips & frothed coconut milk", price: 5.5 },
+      { id: "iced-dirty-caribbean", name: "Iced Dirty Caribbean", desc: "20oz double espresso, Belgian dark chocolate chips, coconut milk, ice & chocolate drizzle", price: 6.0 },
+      { id: "matcha-latte", name: "Matcha Latte", desc: "Matcha with frothed milk", price: 5.0 },
+      { id: "iced-matcha", name: "Iced Matcha", desc: "20oz smooth matcha poured over milk & ice", price: 5.2 },
+      { id: "iced-strawberry-matcha", name: "Iced Strawberry Matcha", desc: "Strawberry pur\u00e9e & smooth iced matcha", price: 6.5 },
+      { id: "iced-white-choc-matcha", name: "Iced White Choc Matcha", desc: "20oz smooth matcha & white chocolate over milk & ice", price: 6.5 },
+      { id: "iced-blueberry-matcha", name: "Iced Blueberry Matcha", desc: "Blueberry pur\u00e9e & smooth iced matcha", price: 6.5 },
+      { id: "cinnamon-bun-iced-matcha", name: "Cinnamon Bun Iced Matcha", desc: "Smooth matcha over ice, housemade cinnamon bun coldfoam", price: 6.5 },
+      { id: "cinnamon-bun-iced-latte", name: "Cinnamon Bun Iced Latte", desc: "Iced latte topped with housemade cinnamon bun coldfoam", price: 5.5 },
+      { id: "hot-chocolate", name: "Hot Chocolate", desc: "Smooth chocolate & frothed milk", price: 4.0 },
+      { id: "tea", name: "Tea", desc: "", price: 3.0 },
+      { id: "banana-matcha", name: "Banana Matcha", desc: "", price: 7.0 },
+      { id: "banana-iced-latte", name: "Banana Iced Latte", desc: "", price: 6.5 },
+      { id: "mont-blanc", name: "Mont Blanc", desc: "", price: 7.0 }
     ]
   },
   {
-    category: "Tea & Botanicals",
+    id: "coolers-smoothies",
+    name: "Coolers & Smoothies",
     items: [
-      { name: "Ember Chai", desc: "House-spiced, steamed milk", price: "€4.40" },
-      { name: "Jasmine Silver Needle", desc: "First-flush white", price: "€4.20" },
-      { name: "Rooibos & Rose", desc: "Caffeine-free, floral", price: "€3.80" },
-      { name: "Matcha Ceremonial", desc: "Stone-ground, Uji", price: "€4.80" }
+      { id: "pink-lemonade", name: "Pink Lemonade", desc: "Raspberry & cloudy lemonade cooler", price: 4.2 },
+      { id: "peach-iced-tea", name: "Peach Iced Tea", desc: "", price: 4.2 },
+      { id: "lemon-iced-tea", name: "Lemon Iced Tea", desc: "", price: 4.2 },
+      { id: "strawberry-protein-cooler", name: "Strawberry Protein Cooler", desc: "25g strawberry collagen protein shaken over ice", price: 5.5 },
+      { id: "mango-green-tea-lemonade", name: "Mango Green Tea Lemonade", desc: "", price: 6.0 },
+      { id: "watermelon-spritz", name: "Watermelon Spritz", desc: "", price: 4.5 },
+      { id: "mango-glaze-smoothie", name: "Mango Glaze Smoothie", desc: "Mango, apple juice, coconut yoghurt, banana & honey", price: 6.5 },
+      { id: "dragon-fruit-smoothie", name: "Dragon Fruit Smoothie", desc: "Dragonfruit, pineapple, apple juice, coconut yoghurt, banana & honey", price: 6.5 },
+      { id: "blue-magic-smoothie", name: "Blue Magic Smoothie", desc: "Vanilla protein, blue spirulina, coconut, banana & almond milk", price: 7.5 },
+      { id: "chocolate-fuel", name: "Chocolate Fuel", desc: "Chocolate protein, peanut butter, double espresso, almond milk & banana", price: 7.5 }
     ]
   },
   {
-    category: "Pastry Counter",
+    id: "food",
+    name: "Food",
     items: [
-      { name: "Butter Croissant", desc: "Laminated, 3-day proof", price: "€3.40" },
-      { name: "Pistachio Escargot", desc: "Rolled, orange blossom", price: "€4.60" },
-      { name: "Almond & Fig Tart", desc: "Seasonal, honey glaze", price: "€4.90" },
-      { name: "Dark Chocolate Rye Cookie", desc: "Sea salt", price: "€3.20" }
-    ]
-  },
-  {
-    category: "All-Day Brunch",
-    items: [
-      { name: "Whipped Ricotta Toast", desc: "Sourdough, honeycomb, thyme", price: "€9.50" },
-      { name: "Shakshuka", desc: "Slow tomato, feta, dukkah", price: "€11.00" },
-      { name: "Smoked Salmon Plate", desc: "Rye, dill crème, capers", price: "€12.50" },
-      { name: "Olive Oil Granola", desc: "Yoghurt, poached pear", price: "€8.00" }
+      { id: "classic-acai", name: "Classic Acai", desc: "Soft serve acai, granola, peanut butter, strawberries, coconut & banana chips", price: 10.0 },
+      { id: "kinder-acai", name: "Kinder Acai", desc: "Soft serve acai, wafer, milk powder, fresh strawberries & Kinder Bueno sauce", price: 12.0 },
+      { id: "island-bowl", name: "Island Bowl", desc: "", price: 12.0 },
+      { id: "morning-bowl", name: "Morning Bowl", desc: "Mango sorbet, granola, pomegranate seeds, coconut yoghurt & coconut flakes", price: 6.0 },
+      { id: "chia-pudding", name: "Chia Pudding", desc: "", price: 6.0 },
+      { id: "overnight-oats", name: "Overnight Oats", desc: "Fem Fuelz chocolate protein, oats, chia seeds, milk & peanut butter drizzle", price: 5.0 },
+      { id: "cream-cheese-bacon", name: "Cream Cheese & Bacon", desc: "Cream cheese & streaky bacon on toasted rye bread", price: 9.0 },
+      { id: "classic-sandwich", name: "Classic Sandwich", desc: "Ballymaloe tomato relish, white cheddar & ham on toasted rye", price: 10.0 },
+      { id: "turkey", name: "Turkey", desc: "Wafer sliced turkey, green pesto, tomato & mozzarella on toasted rye", price: 10.0 },
+      { id: "club", name: "Club", desc: "Chicken, pesto, avocado & tomato on toasted rye bread", price: 10.0 },
+      { id: "veggie", name: "Veggie", desc: "Green pesto, mozzarella, tomato & avocado on toasted rye bread", price: 10.0 },
+      { id: "the-caesar", name: "The Caesar", desc: "", price: 10.0 },
+      { id: "powerball", name: "Powerball", desc: "", price: 3.0 },
+      { id: "croissant", name: "Croissant", desc: "", price: 4.0 },
+      { id: "pain-au-chocolat", name: "Pain au Chocolat", desc: "", price: 4.0 },
+      { id: "morning-bun", name: "Morning Bun", desc: "", price: 5.0 },
+      { id: "biscuit-cake", name: "Biscuit Cake", desc: "", price: 3.0 },
+      { id: "banana-bread", name: "Banana Bread", desc: "", price: 4.5, soldOut: true }
     ]
   }
 ];
@@ -144,20 +210,20 @@ export const ambianceImages = [
 export const reviews = [
   {
     name: "Aoife M.",
-    role: "Regular · Limerick",
-    text: "The most beautiful room in the city. The Babylon Gold is a ritual I can't start a morning without.",
+    role: "Regular \u00b7 Limerick",
+    text: "The most beautiful room in the city. The Cinnamon Bun Iced Matcha is a ritual I can't start a morning without.",
     rating: 5
   },
   {
     name: "Daniel R.",
     role: "Coffee writer",
-    text: "Every detail is considered — the light, the linen, the pour. This is quiet luxury done right.",
+    text: "Every detail is considered \u2014 the light, the pour, the matcha. This is quiet luxury done right.",
     rating: 5
   },
   {
     name: "Saoirse K.",
     role: "Local",
-    text: "Their olive oil latte sounds strange and tastes like silk. The pastries are equally faultless.",
+    text: "Their acai bowls are faultless and the Blue Magic smoothie is my post-run reward. Genuinely the best in town.",
     rating: 4
   }
 ];
