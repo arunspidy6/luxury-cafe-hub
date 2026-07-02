@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import { cafe, heroImage } from "../mock/mock";
 
 export default function Hero() {
@@ -68,12 +69,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.15 }}
             className="mt-10 flex flex-wrap items-center gap-5"
           >
-            <a
-              href="#menu"
+            <Link
+              to="/menu"
               className="inline-flex items-center gap-3 bg-terracotta hover:bg-terracotta-dark text-cream px-8 py-4 text-[13px] tracking-[0.18em] uppercase transition-colors duration-400"
             >
               Explore the Menu
-            </a>
+            </Link>
             <a
               href="#story"
               className="inline-flex items-center gap-2 text-espresso/70 hover:text-terracotta text-[13px] tracking-[0.18em] uppercase transition-colors"

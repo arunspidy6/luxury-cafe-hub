@@ -205,10 +205,14 @@ export const galleryImages = [
 ];
 
 export const ambianceImages = [
-  "https://images.unsplash.com/photo-1753727471014-efe38840c7c7",
-  "https://images.unsplash.com/photo-1768051297578-1ea70392c307",
-  "https://images.pexels.com/photos/11388016/pexels-photo-11388016.jpeg"
+  "https://customer-assets.emergentagent.com/job_luxury-cafe-hub-4/artifacts/ib82oefc_6A019A72-4788-41B1-AFC5-04691F1B4D2E_1_201_a.jpeg",
+  "https://customer-assets.emergentagent.com/job_luxury-cafe-hub-4/artifacts/8rucbjrm_3784F85C-3BA7-4EE5-96D8-71BBA75BC30A_1_201_a.jpeg",
+  "https://customer-assets.emergentagent.com/job_luxury-cafe-hub-4/artifacts/uku7nu06_8E2A8326-BE54-42E8-B5AF-121204DC0BAD_1_201_a.jpeg",
+  "https://customer-assets.emergentagent.com/job_luxury-cafe-hub-4/artifacts/k0o8ssbv_6AA9003D-812C-4D66-86CD-EA3D04349293_4_5005_c.jpeg"
 ];
+
+export const ambianceVideo =
+  "https://customer-assets.emergentagent.com/job_luxury-cafe-hub-4/artifacts/2l80i28b_We%E2%80%99re%20open%20and%20the%20coffee%20is%20pouring%20%E2%98%95%EF%B8%8F%20%23Babylon%20%23limerick.mp4";
 
 export const reviews = [
   {

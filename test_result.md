@@ -102,109 +102,49 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the Babylon Coffee website (React app) at the root URL. Focus on two recently fixed areas plus the ordering flow: 1) Gallery section with 7 images, 2) Cart/order flow with localStorage, 3) Menu page with category tabs, 4) Banana Bread out of stock, 5) Checkout flow to Toast URL"
+user_problem_statement: "Test the Babylon Coffee React site (home at '/', menu at '/menu'). Verify these recent changes: 1) HERO 'EXPLORE THE MENU' LINK (previously broken) - should navigate to /menu route, 2) AMBIANCE VIDEO (priority: autoplay + loop) - verify video playing/looping with mute toggle and 4 supporting images, 3) GALLERY REMOVED - confirm no gallery section or navbar link"
 
 frontend:
-  - task: "Gallery Section - 7 Images Display"
+  - task: "Hero 'Explore the Menu' Link Navigation"
     implemented: true
     working: true
-    file: "/app/frontend/src/components/Gallery.jsx"
+    file: "/app/frontend/src/components/Hero.jsx"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
     status_history:
       - working: true
         agent: "testing"
-        comment: "✅ PASSED - All 7 gallery images loaded successfully with no broken images. Images verified: Pastry (4949px), The Room (4667px), House Coffee (720px), Brunch (6000px), Counter (3456px), Pour (4480px), Plated (4480px). No empty gaps in masonry grid. Gallery heading 'Moments, plated and poured' displays correctly."
+        comment: "✅ PASSED - Hero 'Explore the Menu' button correctly navigates to /menu route. Button found with text 'EXPLORE THE MENU', href='/menu'. Successfully navigated to https://luxury-cafe-hub-4.preview.emergentagent.com/menu. Menu page heading 'The Babylon menu' visible and all 3 category tabs present. Previously broken in-page anchor '#menu' has been fixed to proper React Router navigation."
 
-  - task: "Cart/Order Flow - Home Page Signatures"
+  - task: "Ambiance Video Section - Autoplay & Loop"
     implemented: true
     working: true
-    file: "/app/frontend/src/components/Signatures.jsx, /app/frontend/src/context/CartContext.jsx, /app/frontend/src/components/CartDrawer.jsx"
+    file: "/app/frontend/src/components/Ambiance.jsx"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
     status_history:
       - working: true
         agent: "testing"
-        comment: "✅ PASSED - Cart drawer opens correctly when clicking round '+' button or 'Add to Order' text button. Item added successfully (Iced Strawberry Matcha - €6.50). Quantity controls (+ and -) work correctly. Subtotal displays in correct € format and updates with quantity changes. Cart drawer closes properly."
+        comment: "✅ PASSED - Ambiance video section (id='ambiance') fully functional. Video attributes verified: loop=true, autoplay=true, initially muted=true. Video is playing (currentTime advanced from 1.34s to 3.15s over 2 seconds). Video readyState=4 (HAVE_ENOUGH_DATA). Mute/unmute toggle button works correctly (aria-label changes from 'Unmute video' to 'Mute video', muted property toggles). All 4 supporting images render correctly below video with proper dimensions (1206px, 1206px, 1206px, 359px). Video source: https://customer-assets.emergentagent.com/job_luxury-cafe-hub-4/artifacts/2l80i28b_We're%20open%20and%20the%20coffee%20is%20pouring%20☕️%20%23Babylon%20%23limerick.mp4"
 
-  - task: "Menu Page Navigation"
+  - task: "Gallery Section Removal"
     implemented: true
     working: true
-    file: "/app/frontend/src/pages/MenuPage.jsx"
+    file: "/app/frontend/src/App.js, /app/frontend/src/components/Navbar.jsx"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
     status_history:
       - working: true
         agent: "testing"
-        comment: "✅ PASSED - Navigation to /menu page works correctly via 'View full menu' link. Menu page displays 'The Babylon menu' heading and all content loads properly."
-
-  - task: "Sticky Category Tabs"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/pages/MenuPage.jsx"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: true
-        agent: "testing"
-        comment: "✅ PASSED - All 3 sticky category tabs present and functional: 'Coffee & Matcha', 'Coolers & Smoothies', 'Food'. Clicking tabs scrolls to correct category sections. Active tab highlighting works correctly."
-
-  - task: "Add Items from Menu Page"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/pages/MenuPage.jsx"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: true
-        agent: "testing"
-        comment: "✅ PASSED - Round '+' buttons work correctly for adding items (tested with Americano and Cappuccino). Navbar cart badge updates correctly showing item count. Floating 'View Order (n)' button appears at bottom when items are in cart. Cart count increments properly."
-
-  - task: "Banana Bread Out of Stock"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/pages/MenuPage.jsx, /app/frontend/src/mock/mock.js"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: true
-        agent: "testing"
-        comment: "✅ PASSED - Banana Bread correctly shows 'Out of stock' label. Add button is properly disabled (is_disabled: True). Button has correct styling with cursor-not-allowed class. Item cannot be added to cart."
-
-  - task: "Checkout Button & Toast URL"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/components/CartDrawer.jsx, /app/frontend/src/mock/mock.js"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: true
-        agent: "testing"
-        comment: "✅ PASSED - 'Checkout for Pickup' button visible in cart drawer. Button correctly opens Toast ordering URL in new tab: https://order.toasttab.com/online/babylon-coffee-19-gardens-international-henry-street-limerick-ireland. Opens with target='_blank' and proper noopener/noreferrer attributes."
-
-  - task: "Cart Persistence (localStorage)"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/context/CartContext.jsx"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: true
-        agent: "testing"
-        comment: "✅ PASSED - Cart persists correctly after page reload. Cart count maintained (tested with 3 items). localStorage key 'babylon_cart' working correctly. Cart items and quantities preserved across page refreshes."
+        comment: "✅ PASSED - Gallery section completely removed from home page. Verified: No element with id='gallery' exists (document.getElementById('gallery') returns null). No 'Gallery' link in navbar. No gallery-related headings found. Current section IDs on home page: top, story, signatures, ambiance, visit. Navbar links: Story, Signatures, Ambiance, Visit, Order Now. Gallery component no longer imported or rendered in App.js Home component."
 
 metadata:
   created_by: "testing_agent"
   version: "1.0"
-  test_sequence: 1
+  test_sequence: 2
   run_ui: true
   last_tested: "2026-07-02"
 
@@ -217,3 +157,5 @@ test_plan:
 agent_communication:
   - agent: "testing"
     message: "Comprehensive testing completed for Babylon Coffee website. All 8 test scenarios PASSED successfully. Gallery displays all 7 images correctly, cart/order flow works perfectly with localStorage persistence, menu page navigation and category tabs functional, items can be added from both home and menu pages, Banana Bread properly shows as out of stock with disabled button, and checkout correctly opens Toast URL in new tab. Minor non-critical issues: 2 failed CDN requests (Cloudflare RUM tracking) and some networkidle timeout warnings during navigation, but these do not affect functionality. Application is production-ready."
+  - agent: "testing"
+    message: "NEW TESTING ROUND COMPLETED (2026-07-02): Tested three recent changes to Babylon Coffee site. ALL 3 TESTS PASSED: 1) Hero 'Explore the Menu' link now correctly navigates to /menu route (previously broken in-page anchor fixed), 2) Ambiance video section fully functional with autoplay, loop, mute toggle, and 4 supporting images, 3) Gallery section successfully removed from home page and navbar. No console errors detected. Application changes verified and working correctly."

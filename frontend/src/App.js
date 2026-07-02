@@ -8,7 +8,6 @@ import Marquee from "./components/Marquee";
 import Story from "./components/Story";
 import Signatures from "./components/Signatures";
 import Ambiance from "./components/Ambiance";
-import Gallery from "./components/Gallery";
 import Reviews from "./components/Reviews";
 import Visit from "./components/Visit";
 import Footer from "./components/Footer";
@@ -38,7 +37,6 @@ const Home = () => (
     <Story />
     <Signatures />
     <Ambiance />
-    <Gallery />
     <Reviews />
     <Visit />
     <Footer />
