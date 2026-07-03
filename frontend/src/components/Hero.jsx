@@ -90,7 +90,7 @@ export default function Hero() {
             initial={{ clipPath: "inset(100% 0 0 0)" }}
             animate={{ clipPath: "inset(0% 0 0 0)" }}
             transition={{ duration: 1.3, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="relative aspect-[3/4] max-h-[80vh] mx-auto overflow-hidden rounded-[2px]"
+            className="relative aspect-[3/4] max-h-[80vh] mx-auto overflow-hidden rounded-[2px] scale-[1.2] origin-center"
           >
             <motion.img
               src={heroImage}
