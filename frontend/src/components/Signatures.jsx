@@ -10,7 +10,7 @@ export default function Signatures() {
   const { addItem } = useCart();
 
   return (
-    <section id="signatures" className="bg-paper py-24 lg:py-36">
+    <section id="menu" className="bg-paper py-20 sm:py-24 lg:py-36">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <motion.div
@@ -18,20 +18,20 @@ export default function Signatures() {
           initial="hidden"
           whileInView="show"
           viewport={viewport}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16"
         >
           <div>
             <motion.p
               variants={fadeUp}
               className="text-terracotta text-[12px] tracking-luxe uppercase mb-5"
             >
-              The Signatures
+              The Menu
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="font-display text-espresso text-5xl lg:text-6xl leading-[1.02]"
+              className="font-display text-espresso text-4xl sm:text-5xl lg:text-6xl leading-[1.02]"
             >
-              Made by hand,<br />worth the trip
+              Chilled, fresh<br />&amp; refreshing
             </motion.h2>
           </div>
           <motion.div variants={fadeUp}>

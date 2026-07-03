@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="md:text-center">
             <p className="text-[11px] tracking-[0.16em] uppercase text-cream/50 mb-4">Explore</p>
             <ul className="space-y-2">
-              {["Story", "Signatures", "Ambiance", "Visit"].map((l) => (
+              {["Story", "Menu", "Ambiance", "Visit"].map((l) => (
                 <li key={l}>
                   <a href={`/#${l.toLowerCase()}`} className="text-cream/75 hover:text-terracotta-light transition-colors">
                     {l}

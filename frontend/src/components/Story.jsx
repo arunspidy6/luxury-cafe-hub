@@ -5,8 +5,8 @@ import { fadeUp, scaleIn, stagger, viewport } from "./anim";
 
 export default function Story() {
   return (
-    <section id="story" className="bg-cream py-24 lg:py-36">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    <section id="story" className="bg-cream py-20 sm:py-24 lg:py-36">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
         {/* Image side */}
         <motion.div
           variants={scaleIn}
@@ -18,8 +18,8 @@ export default function Story() {
           <div className="overflow-hidden rounded-[2px]">
             <img
               src={about.image}
-              alt="Babylon interior"
-              className="w-full h-[70vh] object-cover"
+              alt="Babylon signage"
+              className="w-full h-auto object-contain"
             />
           </div>
           <div className="absolute -top-5 -right-5 border border-sage w-full h-full rounded-[2px] -z-0 hidden lg:block" />
@@ -42,7 +42,7 @@ export default function Story() {
 
           <motion.h2
             variants={fadeUp}
-            className="font-display text-espresso text-5xl lg:text-6xl leading-[1.02] mb-8"
+            className="font-display text-espresso text-4xl sm:text-5xl lg:text-6xl leading-[1.02] mb-8"
           >
             {about.title}
           </motion.h2>

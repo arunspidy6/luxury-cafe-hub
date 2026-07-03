@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <section id="top" ref={ref} className="relative min-h-screen bg-cream overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-16 grid lg:grid-cols-12 gap-10 items-center min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-28 pb-16 lg:pt-32 grid lg:grid-cols-12 gap-10 items-center min-h-screen">
         {/* Text */}
         <div className="lg:col-span-6 relative z-10">
           <motion.p
@@ -28,8 +28,8 @@ export default function Hero() {
             {cafe.established} · {cafe.city}
           </motion.p>
 
-          <h1 className="font-display text-espresso leading-[0.92] text-6xl sm:text-7xl lg:text-[6.5rem]">
-            {["A café,", "distilled to", "its finest"].map((line, i) => (
+          <h1 className="font-display text-espresso leading-[0.95] text-5xl sm:text-6xl lg:text-[6.5rem]">
+            {["Iced, fresh", "and made", "for sunny"].map((line, i) => (
               <span key={i} className="block overflow-hidden">
                 <motion.span
                   className="block"
@@ -48,7 +48,7 @@ export default function Hero() {
                 animate={{ y: 0 }}
                 transition={{ duration: 1, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
-                hour.
+                mornings.
               </motion.span>
             </span>
           </h1>
@@ -59,8 +59,8 @@ export default function Hero() {
             transition={{ duration: 1, delay: 1 }}
             className="mt-8 max-w-md text-espresso/70 text-lg leading-relaxed"
           >
-            Small-batch roasting, hand-poured coffee and slow mornings on Henry
-            Street. A quiet luxury, one cup at a time.
+            Slow-poured iced coffee, whisked matcha and fresh-fruit smoothies on
+            Henry Street. Bright, breezy and made for summer.
           </motion.p>
 
           <motion.div
@@ -90,7 +90,7 @@ export default function Hero() {
             initial={{ clipPath: "inset(100% 0 0 0)" }}
             animate={{ clipPath: "inset(0% 0 0 0)" }}
             transition={{ duration: 1.3, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-[62vh] lg:h-[80vh] overflow-hidden rounded-[2px]"
+            className="relative aspect-[3/4] max-h-[80vh] mx-auto overflow-hidden rounded-[2px]"
           >
             <motion.img
               src={heroImage}

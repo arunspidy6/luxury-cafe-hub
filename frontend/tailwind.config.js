@@ -17,8 +17,8 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)'
       },
       colors: {
-        cream: '#F7F0E1',
-        paper: '#FBF6EC',
+        cream: '#FAF6EC',
+        paper: '#FDFAF3',
         espresso: '#2C231B',
         terracotta: {
           DEFAULT: '#BC5B3E',

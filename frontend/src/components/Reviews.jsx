@@ -6,7 +6,7 @@ import { fadeUp, stagger, viewport } from "./anim";
 
 export default function Reviews() {
   return (
-    <section className="bg-espresso py-24 lg:py-36 text-cream">
+    <section className="bg-espresso py-20 sm:py-24 lg:py-36 text-cream">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <motion.div
           variants={stagger}

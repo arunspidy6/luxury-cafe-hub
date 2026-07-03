@@ -16,7 +16,7 @@ export default function Ambiance() {
   }, []);
 
   return (
-    <section id="ambiance" className="bg-sage-dark py-24 lg:py-36 text-cream overflow-hidden">
+    <section id="ambiance" className="bg-sage-dark py-20 sm:py-24 lg:py-36 text-cream overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Text */}
@@ -35,7 +35,7 @@ export default function Ambiance() {
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="font-display text-5xl lg:text-6xl leading-[1.02] mb-8"
+              className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.02] mb-8"
             >
               A room that slows<br />the whole day down
             </motion.h2>
@@ -80,17 +80,17 @@ export default function Ambiance() {
 
               {/* Rotating full-size photo — offset for an asymmetric feel */}
               <div className="md:col-span-6 md:mt-20">
-                <div className="relative aspect-[4/5] rounded-[2px] overflow-hidden bg-espresso">
+                <div className="relative aspect-[4/5] rounded-[2px] overflow-hidden bg-sage-dark">
                   <AnimatePresence>
                     <motion.img
                       key={idx}
                       src={ambianceImages[idx]}
                       alt="Inside Babylon"
-                      initial={{ opacity: 0, scale: 1.06 }}
+                      initial={{ opacity: 0, scale: 1.04 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-contain"
                     />
                   </AnimatePresence>
 

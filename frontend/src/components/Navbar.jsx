@@ -7,7 +7,7 @@ import { useCart } from "../context/CartContext";
 
 const links = [
   { label: "Story", href: "/#story" },
-  { label: "Signatures", href: "/#signatures" },
+  { label: "Menu", href: "/#menu" },
   { label: "Ambiance", href: "/#ambiance" },
   { label: "Visit", href: "/#visit" }
 ];
@@ -39,17 +39,16 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <img
-            src={cafe.logo}
-            alt="Babylon Coffee"
-            className="w-11 h-11 rounded-full object-cover"
-          />
-          <span className="font-display text-2xl tracking-wide text-espresso leading-none hidden sm:block">
-            Babylon
-            <span className="block text-[9px] font-body tracking-luxe text-sage-dark mt-0.5">
-              COFFEE · LIMERICK
-            </span>
+        <Link to="/" className="flex items-center gap-2.5">
+          <span className="w-10 h-10 rounded-full overflow-hidden inline-flex shrink-0">
+            <img
+              src={cafe.logo}
+              alt="Babylon Coffee"
+              className="w-full h-full object-cover scale-[1.18]"
+            />
+          </span>
+          <span className="font-passenger text-2xl lg:text-[1.7rem] text-espresso leading-none lowercase">
+            babylon.
           </span>
         </Link>
 

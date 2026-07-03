@@ -3,7 +3,7 @@
 export const cafe = {
   name: "Babylon",
   fullName: "Babylon Coffee",
-  tagline: "Specialty coffee, matcha & good mornings on Henry Street.",
+  tagline: "Iced coffee, fresh matcha & bright mornings on Henry Street.",
   established: "EST. MMXVIII",
   city: "Limerick, Ireland",
   address: "19 Henry St, Prior's-Land, Limerick, V94 N125",
@@ -31,13 +31,13 @@ export const cafe = {
 };
 
 export const marqueeWords = [
-  "Slow Mornings",
-  "Single Origin",
-  "House Roasted",
-  "Golden Hour",
-  "Hand Poured",
-  "Quiet Luxury",
-  "Ceremonial Matcha",
+  "Iced & Refreshing",
+  "Summer Pours",
+  "Cold Brew Season",
+  "Fresh Fruit Smoothies",
+  "Sun-Soaked Mornings",
+  "Chilled Matcha",
+  "Bright & Breezy",
   "Every Cup a Ritual"
 ];
 
@@ -55,7 +55,7 @@ export const about = {
     { value: "40+", label: "Drinks & bowls" },
     { value: "4.3\u2605", label: "Loved by regulars" }
   ],
-  image: "https://images.pexels.com/photos/17130636/pexels-photo-17130636.jpeg"
+  image: "https://customer-assets.emergentagent.com/job_luxury-cafe-hub-4/artifacts/ehb3hymm_81B83411-3237-43FB-8006-C430572E85C4_1_201_a.jpeg"
 };
 
 // Home-page signatures (Ceremony-inspired product grid)
@@ -98,12 +98,12 @@ export const signatures = [
   },
   {
     id: "sig-dirty-caribbean",
-    tag: "Espresso",
-    name: "Hot Dirty Caribbean",
-    desc: "Double espresso, dark Belgian chocolate chips & frothed coconut milk",
-    price: 5.5,
+    tag: "Iced Espresso",
+    name: "Iced Dirty Caribbean",
+    desc: "Double espresso, dark Belgian chocolate, coconut milk & ice",
+    price: 6.0,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
+      "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
   },
   {
     id: "sig-iced-latte",
